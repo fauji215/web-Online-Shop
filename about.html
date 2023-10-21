@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Toko Online</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="medsos">
+    <div class="container">
+        <ul>
+            <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href=""><i class="fa-brands fa-tiktok"></i></a></li>
+        </ul>
+    </div>
+</div>
+<header>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <h1><a href="index.html"> Online Shop</a></h1>
+            </div>
+            <ul>
+                <li class="active"><a href="index.html">HOME</a></li>
+                <li><a href="about.html">PRODUCT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<section class="services">
+    <div class="container">
+        <h3>OUR PRODUCT</h3>
+        <div class="box">
+            <!-- Product 1 -->
+            <div class="col-4" onclick="order('Smart Phone', 5000000)">
+                <h4>SMART PHONE</h4>
+                <img src="samsung.jpg" alt="samsung" width="200" height="150">
+                <p>IDR.5.000.000,-</p>
+                <button>Order</button>
+            </div>
+             <!-- Product 1 -->
+            <div class="col-4" onclick="order('Playstation5', 15000000)">
+                <h4>SMART PHONE</h4>
+                <img src="ps.jpg" alt="samsung" width="200" height="150">
+                <p>IDR.15.000.000,-</p>
+                <button>Order</button>
+            </div>
+            <!-- Product 1 -->
+            <div class="col-4" onclick="order('Playstation 4', 12000000)">
+                <h4>SMART PHONE</h4>
+                <img src="ps4.jpg" alt="samsung" width="200" height="150">
+                <p>IDR.12.000.000,-</p>
+                <button>Order</button>
+            </div>
+             <!-- Product 1 -->
+            <div class="col-4" onclick="order('Smart Phone', 7000000)">
+                <h4>SMART PHONE</h4>
+                <img src="tv.jpg" alt="samsung" width="200" height="150">
+                <p>IDR.7.000.000,-</p>
+                <button>Order</button>
+                </div>
+            <!-- Product 2 -->
+            <div class="col-4" onclick="order('Mouse', 700000)">
+                <h4>MOUSE</h4>
+                <img src="mouse.jpg" alt="Mouse" width="200" height="150">
+                <p>IDR.700.000,-</p>
+                <button>Order</button>
+            </div>
+            <!-- Product 3 -->
+            <div class="col-4" onclick="order('Keyboard', 8000000)">
+                <h4>KEYBOARD</h4>
+                <img src="keyboard.jpg" alt="Keyboard" width="200" height="150">
+                <p>IDR.8.000.000,-</p>
+                <button>Order</button>
+            </div>
+            <!-- Product 4 -->
+            <div class="col-4" onclick="order('Camera', 10000000)">
+                <h4>CAMERA</h4>
+                <img src="camera.jpeg" alt="Camera" width="200" height="150">
+                <p>IDR.10.000.000,-</p>
+                <button>Order</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="orderModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>Order Form</h3>
+        <form>
+            <label for="product">Product:</label>
+            <input type="text" id="product" name="product" readonly>
+            <label for="price">Price:</label>
+            <input type="text" id="price" name="price" readonly>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required>
+            <button type="button" onclick="submitOrder()">Submit Order</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <small> Copyright &copy; 2023 - Toko Online, All Rights Reserved.</small>
+    </div>
+</footer>
+
+<script>
+    function order(product, price) {
+        document.getElementById('product').value = product;
+        document.getElementById('price').value = price;
+        openModal();
+    }
+
+    function openModal() {
+        document.getElementById('orderModal').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('orderModal').style.display = 'none';
+    }
+
+    function submitOrder() {
+        closeModal();
+        alert('Pesanan Anda telah diterima. Terima kasih!');
+    }
+</script>
+</body>
+</html>
